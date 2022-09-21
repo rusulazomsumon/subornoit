@@ -35,4 +35,13 @@
 
     }
     add_action( 'wp_enqueue_scripts', 'subornoit_assets' );
+
+    // dynamic slider using custom post 
+    function subornoit_cpt(){
+
+    }
+    add_action('init','subornoit_cpt');
+
+
+    // end of funtion area
 ?>

@@ -114,6 +114,20 @@
         <div class="slider-area ">
             <!-- Mobile Menu -->
             <div class="slider-active">
+
+                <?php 
+                    $args = array(
+                        'post_type' => 'slider',
+                        'posts_per_page' => 3
+                    );
+                    $query = new WP_Query($args)
+                    while($query -> have_posts()){
+                        $query->the_post();
+                        the_title();
+                    }
+                    wp_reset_postdata();
+                ?>
+
                 <div class="single-slider slider-height d-flex align-items-center" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/slider/slide-1.jpg')">
                     <div class="container">
                         <div class="row">

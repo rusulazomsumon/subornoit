@@ -2,6 +2,8 @@
     // dynamic site/page title
     function subornoit_setup(){
         add_theme_support('title-tag');
+        add_theme_support('post-thumbnails',array('slider'));
+
     }
     // hocks for title
     add_action('after_setup_theme','subornoit_setup');
@@ -70,7 +72,8 @@
                 'has_archive'        => true,
                 'hierarchical'       => false,
                 'menu_position'      => null,
-                'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', ),
+                'supports'           => array( 'title', 'thumbnail', 'excerpt', ),
+                'show_in_rest'       => true
                 
             );
         

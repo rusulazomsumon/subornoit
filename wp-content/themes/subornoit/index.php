@@ -511,7 +511,7 @@
                         <div class="single-footer-caption mb-30">
                              <!-- logo -->
                             <div class="footer-logo">
-                                <a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/logo2_footer.png" alt=""></a>
+                                <a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/sbitlogo.png" alt="subornoit logo" width="130" height="auto"></a>
                             </div>
                             <div class="footer-tittle">
                                 <div class="footer-pera">

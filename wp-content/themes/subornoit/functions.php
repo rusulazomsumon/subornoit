@@ -38,7 +38,43 @@
 
     // dynamic slider using custom post 
     function subornoit_cpt(){
+        $labels = array(
+            'name'                  => _x( 'Sliders', 'Post type general name', 'subornoit' ),
+            'subornoit'         => _x( 'Slider', 'Post type singular name', 'subornoit' ),
+            'menu_name'             => _x( 'Sliders', 'Admin Menu text', 'subornoit' ),
+            'name_admin_bar'        => _x( 'Slider', 'Add New on Toolbar', 'subornoit' ),
+            'add_new'               => __( 'Add Slider', 'subornoit' ),
+            'add_new_item'          => __( 'Add New Slider', 'subornoit' ),
+            'new_item'              => __( 'New Slider', 'subornoit' ),
+            'edit_item'             => __( 'Edit Slider', 'subornoit' ),
+            'view_item'             => __( 'View Slider', 'subornoit' ),
+            'all_items'             => __( 'All Slider', 'subornoit' ),
+            'search_items'          => __( 'Search Slider', 'subornoit' ),
+            'parent_item_colon'     => __( 'Parent Slider:', 'subornoit' ),
+            'not_found'             => __( 'No Sliders found.', 'subornoit' ),
+            'not_found_in_trash'    => __( 'No Sliders found in Trash.', 'subornoit' ),
+            'featured_image'        => _x( 'Sliders Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+            );
 
+            $args = array(
+                'labels'             => $labels,
+                'public'             => true,
+                'publicly_queryable' => true,
+                'show_ui'            => true,
+                'show_in_menu'       => true,
+                'query_var'          => true,
+                'rewrite'            => array( 'slug' => 'slider' ),
+                'capability_type'    => 'post',
+                'menu_position'       => 2,
+                'menu_icon'           => 'dashicons-slides',
+                'has_archive'        => true,
+                'hierarchical'       => false,
+                'menu_position'      => null,
+                'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', ),
+                
+            );
+        
+            register_post_type( 'slider', $args );
     }
     add_action('init','subornoit_cpt');
 

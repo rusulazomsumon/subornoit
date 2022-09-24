@@ -123,43 +123,32 @@
                     $query = new WP_Query($args);
                     while($query -> have_posts()){
                         $query->the_post();
-                        the_title();
+                        ?>
+                        <!-- slider scripts  -->
+                        <div class="single-slider slider-height d-flex align-items-center" style="background-image:url('<?php 
+                        the_post_thumbnail_url(); ?>')">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-10 mx-auto">
+                                        <div class="hero__caption">
+                                            <p>Welcome to Buson</p>
+                                            <h1><?php the_title(); ?></h1>
+                                            <!-- Hero-btn -->
+                                            <div class="hero__btn">
+                                                <a href="#" class="btn hero-btn">Learn More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- rest of loop -->
+                        <?php
                     }
                     wp_reset_postdata();
                 ?>
 
-                <div class="single-slider slider-height d-flex align-items-center" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/slider/slide-1.jpg')">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-10 mx-auto">
-                                <div class="hero__caption">
-                                    <p>Welcome to Buson</p>
-                                    <h1>We help you to grow your  business</h1>
-                                    <!-- Hero-btn -->
-                                    <div class="hero__btn">
-                                        <a href="#" class="btn hero-btn">Learn More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-slider slider-height d-flex align-items-center" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/slider/slide-2.jpg')">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-10 mx-auto">
-                                <div class="hero__caption">
-                                    <p>Welcome to Buson</p>
-                                    <h1>We help you to grow your  business</h1>
-                                    <!-- Hero-btn -->
-                                    <div class="hero__btn">
-                                        <a href="#" class="btn hero-btn">Learn More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
         <!-- slider Area End-->

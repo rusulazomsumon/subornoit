@@ -72,7 +72,7 @@
                 'has_archive'        => true,
                 'hierarchical'       => false,
                 'menu_position'      => null,
-                'supports'           => array( 'title', 'thumbnail', 'excerpt', ),
+                'supports'           => array( 'title', 'thumbnail', ),
                 'show_in_rest'       => true
                 
             );

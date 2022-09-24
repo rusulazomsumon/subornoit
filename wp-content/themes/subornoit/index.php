@@ -114,16 +114,17 @@
         <div class="slider-area ">
             <!-- Mobile Menu -->
             <div class="slider-active">
-
+                <!-- dynamic slider query -->
                 <?php 
                     $args = array(
                         'post_type' => 'slider',
-                        'posts_per_page' => 3
+                        'posts_per_page' => 3,
+                        'order' => 'ASC'
                     );
                     $query = new WP_Query($args);
                     while($query -> have_posts()){
                         $query->the_post();
-                        ?>
+                ?>
                         <!-- slider scripts  -->
                         <div class="single-slider slider-height d-flex align-items-center" style="background-image:url('<?php 
                         the_post_thumbnail_url(); ?>')">
@@ -143,7 +144,7 @@
                             </div>
                         </div>
                         <!-- rest of loop -->
-                        <?php
+                <?php
                     }
                     wp_reset_postdata();
                 ?>
@@ -187,72 +188,36 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-services text-center">
-                            <div class="services-icon">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recent/rcent_1.png" alt="">
+                    <!-- dynamic service query -->
+                    <?php 
+                        $args = array(
+                            'post_type' => 'service',
+                            'posts_per_page' => 6
+                        );
+                        $query = new WP_Query($args);
+                        while($query -> have_posts()){
+                            $query->the_post();
+                            ?>
+                            <!-- services content -->
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="single-services text-center">
+                                    <div class="services-icon">
+                                        <img src="<?php the_post_thumbnail_url(); ?>">
+                                    </div>
+                                    <div class="services-caption">
+                                        <h4><?php the_title(); ?></h4>
+                                        <!-- service description: no need <p> beacuse its come with the_content() auto <p> -->
+                                        <?php the_content(); ?>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="services-caption">
-                                <h4>Strategic Planning</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-services text-center">
-                            <div class="services-icon">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recent/rcent_2.png" alt="">
-                            </div>
-                            <div class="services-caption">
-                                <h4>Trades & stocks</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-services text-center">
-                            <div class="services-icon">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recent/rcent_3.png" alt="">
-                            </div>
-                            <div class="services-caption">
-                                <h4>Audit & Assurance</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-services text-center">
-                            <div class="services-icon">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recent/rcent_2.png" alt="">
-                            </div>
-                            <div class="services-caption">
-                                <h4>Audit & Assurance</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-services text-center">
-                            <div class="services-icon">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recent/rcent_1.png" alt="">
-                            </div>
-                            <div class="services-caption">
-                                <h4>Audit & Assurance</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-services text-center">
-                            <div class="services-icon">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recent/rcent_3.png" alt="">
-                            </div>
-                            <div class="services-caption">
-                                <h4>Audit & Assurance</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-                            </div>
-                        </div>
-                    </div>
+                            <!-- serveice content End -->
+                            <!-- rest of loop -->
+                        <?php
+                            }
+                            wp_reset_postdata();
+                        ?>
+                
                 </div>
             </div>
         </div>

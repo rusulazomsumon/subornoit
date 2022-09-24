@@ -2,7 +2,7 @@
     // dynamic site/page title
     function subornoit_setup(){
         add_theme_support('title-tag');
-        add_theme_support('post-thumbnails',array('slider'));
+        add_theme_support('post-thumbnails',array('slider','service'));
 
     }
     // hocks for title
@@ -37,7 +37,8 @@
 
     }
     add_action( 'wp_enqueue_scripts', 'subornoit_assets' );
-
+    
+// *********************************************************************************************************
     // dynamic slider using custom post 
     function subornoit_cpt(){
         $labels = array(
@@ -80,6 +81,52 @@
             register_post_type( 'slider', $args );
     }
     add_action('init','subornoit_cpt');
+
+
+    // *********************************************************************************************************
+    // dynamic services  using custom post 
+    function subornoit_services(){
+        $labels = array(
+            'name'                  => _x( 'Services', 'Post type general name', 'subornoit' ),
+            'subornoit'         => _x( 'service', 'Post type singular name', 'subornoit' ),
+            'menu_name'             => _x( 'Services', 'Admin Menu text', 'subornoit' ),
+            'name_admin_bar'        => _x( 'service', 'Add New on Toolbar', 'subornoit' ),
+            'add_new'               => __( 'Add Service', 'subornoit' ),
+            'add_new_item'          => __( 'Add New Service', 'subornoit' ),
+            'new_item'              => __( 'New Service', 'subornoit' ),
+            'edit_item'             => __( 'Edit Service', 'subornoit' ),
+            'view_item'             => __( 'View Service', 'subornoit' ),
+            'all_items'             => __( 'All Service', 'subornoit' ),
+            'search_items'          => __( 'Search Service', 'subornoit' ),
+            'parent_item_colon'     => __( 'Parent Service:', 'subornoit' ),
+            'not_found'             => __( 'No Services found.', 'subornoit' ),
+            'not_found_in_trash'    => __( 'No Services found in Trash.', 'subornoit' ),
+            'featured_image'        => _x( 'Service Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+            );
+
+            $args = array(
+                'labels'             => $labels,
+                'public'             => true,
+                'publicly_queryable' => true,
+                'show_ui'            => true,
+                'show_in_menu'       => true,
+                'query_var'          => true,
+                'rewrite'            => array( 'slug' => 'service' ),
+                'capability_type'    => 'post',
+                'menu_position'       => 5,
+                'menu_icon'           => 'dashicons-analytics',
+                'has_archive'        => true,
+                'hierarchical'       => false,
+                'menu_position'      => null,
+                'supports'           => array( 'title', 'editor', 'thumbnail'),
+                // to enable gutenburg editor this code need, without by defult clasic activate
+                // 'show_in_rest'       => true
+                
+            );
+        
+            register_post_type( 'service', $args );
+    }
+    add_action('init','subornoit_services');
 
 
     // end of funtion area

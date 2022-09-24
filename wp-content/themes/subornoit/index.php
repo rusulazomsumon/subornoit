@@ -131,11 +131,11 @@
                                 <div class="row">
                                     <div class="col-xl-10 mx-auto">
                                         <div class="hero__caption">
-                                            <p>Welcome to Buson</p>
+                                            <p><?php the_field('sub_heading'); ?></p>
                                             <h1><?php the_title(); ?></h1>
                                             <!-- Hero-btn -->
                                             <div class="hero__btn">
-                                                <a href="#" class="btn hero-btn">Learn More</a>
+                                                <a href="<?php the_field('button_url'); ?>" class="btn hero-btn"><?php the_field('button_text'); ?></a>
                                             </div>
                                         </div>
                                     </div>

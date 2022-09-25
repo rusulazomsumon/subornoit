@@ -295,58 +295,38 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-4">
-                        <div class="single-profile mb-30">
-                            <!-- Front -->
-                            <div class="single-profile-front">
-                                <div class="profile-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/team/team-1.jpg" alt="">
-                                </div>
-                                <div class="profile-caption">
-                                    <h4>John Doe <span>Web Developer</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4">
-                        <div class="single-profile mb-30">
-                            <!-- Front -->
-                            <div class="single-profile-front">
-                                <div class="profile-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/team/team-2.jpg" alt="">
-                                </div>
-                                <div class="profile-caption">
-                                    <h4>John Doe <span>Web Developer</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4">
-                        <div class="single-profile mb-30">
-                            <!-- Front -->
-                            <div class="single-profile-front">
-                                <div class="profile-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/team/team-3.jpg" alt="">
-                                </div>
-                                <div class="profile-caption">
-                                    <h4>John Doe <span>Web Developer</span></h4>
+                    <!-- dynamic member  query -->
+                    <?php 
+                        $args = array(
+                            'post_type' => 'teams',
+                            'order' => 'ASC',
+                            'posts_per_page' => 6
+                        );
+                        $query = new WP_Query($args);
+                        while($query -> have_posts()){
+                            $query->the_post();
+                            ?>
+                            <!-- teams content -->
+                            <div class="col-xl-3 col-lg-3 col-md-4">
+                                <div class="single-profile mb-30">
+                                    <!-- Front -->
+                                    <div class="single-profile-front">
+                                        <div class="profile-img">
+                                            <img src="<?php the_post_thumbnail_url(); ?>">
+                                        </div>
+                                        <div class="profile-caption">
+                                            <h4><?php the_title(); ?><span><?php the_content(); ?></span></h4>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4">
-                        <div class="single-profile mb-30">
-                            <!-- Front -->
-                            <div class="single-profile-front">
-                                <div class="profile-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/team/team-2.jpg" alt="">
-                                </div>
-                                <div class="profile-caption">
-                                    <h4>John Doe <span>Web Developer</span></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <!-- team member content End -->
+                            <!-- rest of loop -->
+                            <?php
+                                }
+                                wp_reset_postdata();
+                            ?>
+                    <!-- members end -->
                 </div>
             </div>
         </div>

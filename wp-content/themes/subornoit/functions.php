@@ -2,7 +2,7 @@
     // dynamic site/page title
     function subornoit_setup(){
         add_theme_support('title-tag');
-        add_theme_support('post-thumbnails',array('slider','service'));
+        add_theme_support('post-thumbnails',array('slider','service','teams'));
 
     }
     // hocks for title
@@ -127,6 +127,52 @@
             register_post_type( 'service', $args );
     }
     add_action('init','subornoit_services');
+
+    // *********************************************************************************************************
+    // dynamic tem member  using custom post 
+    function subornoit_teams(){
+        $labels = array(
+            'name'                  => _x( 'teams', 'Post type general name', 'subornoit' ),
+            'subornoit'         => _x( 'team', 'Post type singular name', 'subornoit' ),
+            'menu_name'             => _x( 'teams', 'Admin Menu text', 'subornoit' ),
+            'name_admin_bar'        => _x( 'team', 'Add New on Toolbar', 'subornoit' ),
+            'add_new'               => __( 'Add Mmember', 'subornoit' ),
+            'add_new_item'          => __( 'Add New Mmember', 'subornoit' ),
+            'new_item'              => __( 'New Mmembers', 'subornoit' ),
+            'edit_item'             => __( 'Edit Mmembers', 'subornoit' ),
+            'view_item'             => __( 'View Teams', 'subornoit' ),
+            'all_items'             => __( 'All Members', 'subornoit' ),
+            'search_items'          => __( 'Search Member', 'subornoit' ),
+            'parent_item_colon'     => __( 'Parent Member:', 'subornoit' ),
+            'not_found'             => __( 'No teams found.', 'subornoit' ),
+            'not_found_in_trash'    => __( 'No teams found in Trash.', 'subornoit' ),
+            'featured_image'        => _x( 'Member Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+            );
+
+            $args = array(
+                'labels'             => $labels,
+                'public'             => true,   
+                'publicly_queryable' => true,
+                'show_ui'            => true,
+                'show_in_menu'       => true,
+                'query_var'          => true,
+                'rewrite'            => array( 'slug' => 'teams' ),
+                'capability_type'    => 'post',
+                'menu_position'       => 6,
+                'menu_icon'           => 'dashicons-groups',
+                'has_archive'        => true,
+                'hierarchical'       => false,
+                'menu_position'      => null,
+                'supports'           => array( 'title', 'editor', 'thumbnail'),
+                // to enable gutenburg editor this code need, without by defult clasic activate
+                // 'show_in_rest'       => true
+                
+            );
+        
+            register_post_type( 'teams', $args );
+    }
+    add_action('init','subornoit_teams');
+
 
 
     // end of funtion area

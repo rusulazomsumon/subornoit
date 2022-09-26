@@ -2,7 +2,7 @@
     // dynamic site/page title
     function subornoit_setup(){
         add_theme_support('title-tag');
-        add_theme_support('post-thumbnails',array('slider','service','teams'));
+        add_theme_support('post-thumbnails',array('post','slider','service','teams','testimonial'));
 
     }
     // hocks for title
@@ -173,6 +173,50 @@
     }
     add_action('init','subornoit_teams');
 
+    // *********************************************************************************************************
+    // dynamic  TESTIMONIALS using custom post 
+    function subornoit_ttmls(){
+        $labels = array(
+            'name'                  => _x( 'Testimonial', 'Post type general name', 'subornoit' ),
+            'subornoit'         => _x( 'Testimonial', 'Post type singular name', 'subornoit' ),
+            'menu_name'             => _x( 'Testimonial', 'Admin Menu text', 'subornoit' ),
+            'name_admin_bar'        => _x( 'Testimonial', 'Add New on Toolbar', 'subornoit' ),
+            'add_new'               => __( 'Add Testimonial', 'subornoit' ),
+            'add_new_item'          => __( 'Add New Testimonial', 'subornoit' ),
+            'new_item'              => __( 'New Testimonials', 'subornoit' ),
+            'edit_item'             => __( 'Edit Testimonials', 'subornoit' ),
+            'view_item'             => __( 'View Testimonials', 'subornoit' ),
+            'all_items'             => __( 'All Testimonials', 'subornoit' ),
+            'search_items'          => __( 'Search Testimonial', 'subornoit' ),
+            'parent_item_colon'     => __( 'Parent Testimonial:', 'subornoit' ),
+            'not_found'             => __( 'No Testimonial found.', 'subornoit' ),
+            'not_found_in_trash'    => __( 'No Testimonial found in Trash.', 'subornoit' ),
+            'featured_image'        => _x( 'Member Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+            );
+
+            $args = array(
+                'labels'             => $labels,
+                'public'             => true,   
+                'publicly_queryable' => true,
+                'show_ui'            => true,
+                'show_in_menu'       => true,
+                'query_var'          => true,
+                'rewrite'            => array( 'slug' => 'testimonial' ),
+                'capability_type'    => 'post',
+                'menu_position'       => 7,
+                'menu_icon'           => 'dashicons-editor-quote',
+                'has_archive'        => true,
+                'hierarchical'       => false,
+                'menu_position'      => null,
+                'supports'           => array('thumbnail'),
+                // to enable gutenburg editor this code need, without by defult clasic activate
+                // 'show_in_rest'       => true
+                
+            );
+        
+            register_post_type( 'testimonial', $args );
+    }
+    add_action('init','subornoit_ttmls');
 
 
     // end of funtion area

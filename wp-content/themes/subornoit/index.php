@@ -338,54 +338,46 @@
                <div class="row justify-content-center">
                     <div class="col-xl-9 col-lg-9 col-md-9">
                         <div class="h1-testimonial-active">
-                            <!-- Single Testimonial -->
-                            <div class="single-testimonial pt-65">
-                                <!-- Testimonial tittle -->
-                                <div class="testimonial-icon mb-45">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/testimonial.png" class="ani-btn " alt="">
-                                </div>
-                                 <!-- Testimonial Content -->
-                                <div class="testimonial-caption text-center">
-                                    <p>You can’t succeed if you just do what others do and 
-                                        follow the well-worn path. You need to create a new and 
-                                        original path for yourself. </p>
-                                    <!-- Rattion -->
-                                    <div class="testimonial-ratting">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                            <!-- php code for single testimonial and sql query -->
+                            <!-- dynamic testimonial  query -->
+                            <?php 
+                                $args = array(
+                                    'post_type' => 'testimonial',
+                                    'order' => 'ASC',
+                                    'posts_per_page' => 3
+                                );
+                                $query = new WP_Query($args);
+                                while($query -> have_posts()){
+                                    $query->the_post();
+                                    ?>
+                                    <!-- Single Testimonial scripts -->
+                                    <div class="single-testimonial pt-65">
+                                        <!-- Testimonial tittle -->
+                                        <div class="testimonial-icon mb-45">
+                                            <img src="<?php the_post_thumbnail_url() ?>" class="ani-btn " alt=" clints of suborno it">
+                                        </div>
+                                        <!-- Testimonial Content -->
+                                        <div class="testimonial-caption text-center">
+                                            <p><?php the_field('quotes'); ?></p>
+                                            <!-- Rattion -->
+                                            <div class="testimonial-ratting">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <div class="rattiong-caption">
+                                                <span><?php the_field('clints_name'); ?><span> - <?php the_field('degignations'); ?></span> </span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="rattiong-caption">
-                                        <span>Clifford Frazier<span> - Colorlib Themes</span> </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Testimonial -->
-                            <div class="single-testimonial pt-65">
-                                <!-- Testimonial tittle -->
-                                <div class="testimonial-icon mb-45">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/testimonial.png"  class="ani-btn" alt="">
-                                </div>
-                                 <!-- Testimonial Content -->
-                                <div class="testimonial-caption text-center">
-                                    <p>You can’t succeed if you just do what others do and 
-                                        follow the well-worn path. You need to create a new and 
-                                        original path for yourself. </p>
-                                    <!-- Rattion -->
-                                    <div class="testimonial-ratting">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div class="rattiong-caption">
-                                        <span>Clifford Frazier<span> - Colorlib Themes</span> </span>
-                                    </div>
-                                </div>
-                            </div>
+                                    <!-- single testimonials end -->
+                                <!-- rest of loop -->
+                            <?php
+                                }
+                                wp_reset_postdata();
+                            ?>
                         </div>
                     </div>
                </div>
@@ -393,7 +385,7 @@
         </div>
         <!-- Testimonial End -->
 
-        <!-- Recent Area Start -->
+        <!-- Recent News Area Start -->
         <div class="recent-area section-paddingt">
             <div class="container">
                 <!-- section tittle -->
@@ -405,45 +397,49 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-recent-cap mb-30">
-                            <div class="recent-img">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recent/rcent_1.png" alt="">
+                    <!-- php code for single testimonial and sql query -->
+                    <!-- dynamic testimonial  query -->
+                    <?php 
+                        $args = array(
+                            'post_type' => 'post',
+                            'order' => 'DSC',
+                            'posts_per_page' => 3
+                        );
+                        $query = new WP_Query($args);
+                        while($query -> have_posts()){
+                            $query->the_post();
+                            ?>
+                            <!-- Single News  scripts -->
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="single-recent-cap mb-30">
+                                    <div class="recent-img">
+                                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_post_thumbnail_caption($post); ?>">
+                                    </div>
+                                    <div class="recent-cap">
+                                        <span>
+                                            <?php  
+                                                $catgs = get_the_category();
+                                                foreach($catgs as $catg){
+                                                    echo $catg -> name.", ";
+                                                }
+                                            ?>
+                                        </span>
+                                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                        <p><?php the_date(); ?></p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="recent-cap">
-                                <span>Business planing</span>
-                                <h4><a href="single-blog.html">Amazing Places To Visit In Summer</a></h4>
-                                <p>Nov 30, 2020</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-recent-cap mb-30">
-                            <div class="recent-img">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recent/rcent_2.png" alt="">
-                            </div>
-                            <div class="recent-cap">
-                                <span>Audit</span>
-                                <h4><a href="single-blog.html">Amazing Places To Visit In Summer</a></h4>
-                                <p>Nov 30, 2020</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-recent-cap mb-30">
-                            <div class="recent-img">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/recent/rcent_3.png" alt="">
-                            </div>
-                            <div class="recent-cap">
-                                <span>Business planing</span>
-                                <h4><a href="single-blog.html">Amazing Places To Visit In Summer</a></h4>
-                                <p>Nov 30, 2020</p>
-                            </div>
-                        </div>
-                    </div>
+                            <!-- single News script  end -->
+                        <!-- rest of loop -->
+                    <?php
+                        }
+                        wp_reset_postdata();
+                    ?>
+                    <!-- recent single news end -->
                 </div>
             </div>
         </div>
+        <!-- TODO:see all pagignation  -->
         <!-- Recent Area End-->
 
         

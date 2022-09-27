@@ -1,346 +1,349 @@
-<!-- including header -->
     <?php
         get_header();
     ?>
-    <main >
 
         <!-- slider Area Start-->
-        <div class="slider-area ">
-            <!-- Mobile Menu -->
-            <div class="slider-active">
-                <!-- dynamic slider query -->
-                <?php 
-                    $args = array(
-                        'post_type' => 'slider',
-                        'posts_per_page' => 3,
-                        'order' => 'ASC'
-                    );
-                    $query = new WP_Query($args);
-                    while($query -> have_posts()){
-                        $query->the_post();
-                ?>
-                        <!-- slider scripts  -->
-                        <div class="single-slider slider-height d-flex align-items-center" style="background-image:url('<?php 
-                        the_post_thumbnail_url(); ?>')">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xl-10 mx-auto">
-                                        <div class="hero__caption">
-                                            <p><?php the_field('sub_heading'); ?></p>
-                                            <h1><?php the_title(); ?></h1>
-                                            <!-- Hero-btn -->
-                                            <div class="hero__btn">
-                                                <a href="<?php the_field('button_url'); ?>" class="btn hero-btn"><?php the_field('button_text'); ?></a>
-                                            </div>
+     <div class="slider-area ">
+        <!-- Mobile Menu -->
+        <div class="single-slider slider-height2 d-flex align-items-center" style="background-image: url('assets/img/breadcumb.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Our Blog</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider Area End-->
+
+    <!--================Blog Area =================-->
+    <section class="blog_area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>15</h3>
+                                    <p>Jan</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Google inks pact for new 35-storey office</h2>
+                                </a>
+                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
+                                    he earth it first without heaven in place seed it second morning saying.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="assets/img/blog/single_blog_2.png" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>15</h3>
+                                    <p>Jan</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Google inks pact for new 35-storey office</h2>
+                                </a>
+                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
+                                    he earth it first without heaven in place seed it second morning saying.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="assets/img/blog/single_blog_3.png" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>15</h3>
+                                    <p>Jan</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Google inks pact for new 35-storey office</h2>
+                                </a>
+                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
+                                    he earth it first without heaven in place seed it second morning saying.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="assets/img/blog/single_blog_4.png" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>15</h3>
+                                    <p>Jan</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Google inks pact for new 35-storey office</h2>
+                                </a>
+                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
+                                    he earth it first without heaven in place seed it second morning saying.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="assets/img/blog/single_blog_5.png" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>15</h3>
+                                    <p>Jan</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="single-blog.html">
+                                    <h2>Google inks pact for new 35-storey office</h2>
+                                </a>
+                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
+                                    he earth it first without heaven in place seed it second morning saying.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <nav class="blog-pagination justify-content-center d-flex">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Previous">
+                                        <i class="ti-angle-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link">1</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a href="#" class="page-link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Next">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget search_widget">
+                            <form action="#">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder='Search Keyword'
+                                            onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Search Keyword'">
+                                        <div class="input-group-append">
+                                            <button class="btns" type="button"><i class="ti-search"></i></button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- rest of loop -->
-                <?php
-                    }
-                    wp_reset_postdata();
-                ?>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit">Search</button>
+                            </form>
+                        </aside>
 
-                
-            </div>
-        </div>
-        <!-- slider Area End-->
+                        <aside class="single_sidebar_widget post_category_widget">
+                            <h4 class="widget_title">Category</h4>
+                            <ul class="list cat-list">
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Resaurant food</p>
+                                        <p>(37)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Travel news</p>
+                                        <p>(10)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Modern technology</p>
+                                        <p>(03)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Product</p>
+                                        <p>(11)</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Inspiration</p>
+                                        <p>21</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex">
+                                        <p>Health Care (21)</p>
+                                        <p>09</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </aside>
 
-        <!-- We Trusted Start-->
-        <div class="we-trusted-area trusted-padding">
-            <div class="container">
-                <div class="row d-flex align-items-end">
-                    <div class="col-xl-7 col-lg-7">
-                        <div class="trusted-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/team/wetrusted.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-5">
-                        <div class="trusted-caption">
-                           <h2>We are more trusted then 5000 clients</h2>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru  dolor sit amet, consectetur adipn.</p>
-                            <a href="#" class="btn trusted-btn">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        <!-- We Trusted End-->
-
-        <!-- services Area Start-->
-        <div class="services-area section-padding2">
-            <div class="container">
-                <!-- section tittle -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-tittle text-center">
-                            <h2>Our Services</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- dynamic service query -->
-                    <?php 
-                        $args = array(
-                            'post_type' => 'service',
-                            'posts_per_page' => 6
-                        );
-                        $query = new WP_Query($args);
-                        while($query -> have_posts()){
-                            $query->the_post();
-                            ?>
-                            <!-- services content -->
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="single-services text-center">
-                                    <div class="services-icon">
-                                        <img src="<?php the_post_thumbnail_url(); ?>">
-                                    </div>
-                                    <div class="services-caption">
-                                        <h4><?php the_title(); ?></h4>
-                                        <!-- service description: no need <p> beacuse its come with the_content() auto <p> -->
-                                        <?php the_content(); ?>
-                                    </div>
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Recent Post</h3>
+                            <div class="media post_item">
+                                <img src="assets/img/post/post_1.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>From life was you fish...</h3>
+                                    </a>
+                                    <p>January 12, 2019</p>
                                 </div>
                             </div>
-                            <!-- serveice content End -->
-                            <!-- rest of loop -->
-                        <?php
-                            }
-                            wp_reset_postdata();
-                        ?>
-                
-                </div>
-            </div>
-        </div>
-        <!-- services Area End-->
-
-        <!-- Request Back Start -->
-        <div class="request-back-area section-padding30">
-            <div class="container">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-xl-8 mx-auto text-center">
-                        <div class="request-content">
-                            <h3>Request for  Call Back</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore,</p>
-                            <a href="#" class="btn trusted-btn">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Request Back End -->
-        
-        <!-- Completed Cases Start -->
-        <div class="completed-cases section-padding3">
-            <div class="container">
-                <div class="row">
-                    <!-- slider Heading -->
-                    <div class="col-xl-4 col-lg-4 col-md-8">
-                        <div class="single-cases-info mb-30">
-                            <h3>Completed Cases</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali
-                                quUt enim ad minim veniam.
-                                quis nostrud exercitation ullamco laboris 
-                                nierci si ut.</p>
-                            <a href="gallery.html" class="border-btn border-btn2">See more</a>
-                        </div>
-                    </div>
-                    <!-- OwL -->
-                    <div class="col-xl-8 col-lg-8 col-md-col-md-7">
-                        <div class=" completed-active owl-carousel"> 
-                            <div class="single-cases-img">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service/completed_case_1.png" alt="">
-                                <!-- img hover caption -->
-                               <div class="single-cases-cap">
-                                    <h4><a href="case_details.html">Marketing Strategy</a></h4>
-                                    <p>Completely impact synergistic mindshare whereas premium services.</p>
-                                    <span>Advisory</span>
-                               </div>
-                            </div>
-                            <div class="single-cases-img">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service/completed_case_2.png" alt="">
-                                <!-- img hover caption -->
-                               <div class="single-cases-cap">
-                                   <h4><a href="case_details.html">Marketing Strategy</a></h4>
-                                    <p>Completely impact synergistic mindshare whereas premium services.</p>
-                                    <span>Advisory</span>
-                               </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Completed Cases end -->
-
-        <!-- Team-profile Start -->
-        <div class="team-profile team-padding">
-            <div class="container">
-                <!-- section tittle -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-tittle text-center">
-                            <h2>Teams</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- dynamic member  query -->
-                    <?php 
-                        $args = array(
-                            'post_type' => 'teams',
-                            'order' => 'ASC',
-                            'posts_per_page' => 6
-                        );
-                        $query = new WP_Query($args);
-                        while($query -> have_posts()){
-                            $query->the_post();
-                            ?>
-                            <!-- teams content -->
-                            <div class="col-xl-3 col-lg-3 col-md-4">
-                                <div class="single-profile mb-30">
-                                    <!-- Front -->
-                                    <div class="single-profile-front">
-                                        <div class="profile-img">
-                                            <img src="<?php the_post_thumbnail_url(); ?>">
-                                        </div>
-                                        <div class="profile-caption">
-                                            <h4><?php the_title(); ?><span><?php the_content(); ?></span></h4>
-                                        </div>
-                                    </div>
+                            <div class="media post_item">
+                                <img src="assets/img/post/post_2.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>The Amazing Hubble</h3>
+                                    </a>
+                                    <p>02 Hours ago</p>
                                 </div>
                             </div>
-                            <!-- team member content End -->
-                            <!-- rest of loop -->
-                            <?php
-                                }
-                                wp_reset_postdata();
-                            ?>
-                    <!-- members end -->
-                </div>
-            </div>
-        </div>
-        <!-- Team-profile End-->
-
-        <!-- Testimonial Start -->
-        <div class="testimonial-area fix">
-            <div class="container">
-               <div class="row justify-content-center">
-                    <div class="col-xl-9 col-lg-9 col-md-9">
-                        <div class="h1-testimonial-active">
-                            <!-- php code for single testimonial and sql query -->
-                            <!-- dynamic testimonial  query -->
-                            <?php 
-                                $args = array(
-                                    'post_type' => 'testimonial',
-                                    'order' => 'ASC',
-                                    'posts_per_page' => 3
-                                );
-                                $query = new WP_Query($args);
-                                while($query -> have_posts()){
-                                    $query->the_post();
-                                    ?>
-                                    <!-- Single Testimonial scripts -->
-                                    <div class="single-testimonial pt-65">
-                                        <!-- Testimonial tittle -->
-                                        <div class="testimonial-icon mb-45">
-                                            <img src="<?php the_post_thumbnail_url() ?>" class="ani-btn " alt=" clints of suborno it">
-                                        </div>
-                                        <!-- Testimonial Content -->
-                                        <div class="testimonial-caption text-center">
-                                            <p><?php the_field('quotes'); ?></p>
-                                            <!-- Rattion -->
-                                            <div class="testimonial-ratting">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                            <div class="rattiong-caption">
-                                                <span><?php the_field('clints_name'); ?><span> - <?php the_field('degignations'); ?></span> </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single testimonials end -->
-                                <!-- rest of loop -->
-                            <?php
-                                }
-                                wp_reset_postdata();
-                            ?>
-                        </div>
-                    </div>
-               </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-
-        <!-- Recent News Area Start -->
-        <div class="recent-area section-paddingt">
-            <div class="container">
-                <!-- section tittle -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-tittle text-center">
-                            <h2>Our Recent News</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- php code for single testimonial and sql query -->
-                    <!-- dynamic testimonial  query -->
-                    <?php 
-                        $args = array(
-                            'post_type' => 'post',
-                            'order' => 'DSC',
-                            'posts_per_page' => 3
-                        );
-                        $query = new WP_Query($args);
-                        while($query -> have_posts()){
-                            $query->the_post();
-                            ?>
-                            <!-- Single News  scripts -->
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="single-recent-cap mb-30">
-                                    <div class="recent-img">
-                                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_post_thumbnail_caption($post); ?>">
-                                    </div>
-                                    <div class="recent-cap">
-                                        <span>
-                                            <?php  
-                                                $catgs = get_the_category();
-                                                foreach($catgs as $catg){
-                                                    echo $catg -> name.", ";
-                                                }
-                                            ?>
-                                        </span>
-                                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                                        <p><?php the_date(); ?></p>
-                                    </div>
+                            <div class="media post_item">
+                                <img src="assets/img/post/post_3.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Astronomy Or Astrology</h3>
+                                    </a>
+                                    <p>03 Hours ago</p>
                                 </div>
                             </div>
-                            <!-- single News script  end -->
-                        <!-- rest of loop -->
-                    <?php
-                        }
-                        wp_reset_postdata();
-                    ?>
-                    <!-- recent single news end -->
+                            <div class="media post_item">
+                                <img src="assets/img/post/post_4.png" alt="post">
+                                <div class="media-body">
+                                    <a href="single-blog.html">
+                                        <h3>Asteroids telescope</h3>
+                                    </a>
+                                    <p>01 Hours ago</p>
+                                </div>
+                            </div>
+                        </aside>
+                        <aside class="single_sidebar_widget tag_cloud_widget">
+                            <h4 class="widget_title">Tag Clouds</h4>
+                            <ul class="list">
+                                <li>
+                                    <a href="#">project</a>
+                                </li>
+                                <li>
+                                    <a href="#">love</a>
+                                </li>
+                                <li>
+                                    <a href="#">technology</a>
+                                </li>
+                                <li>
+                                    <a href="#">travel</a>
+                                </li>
+                                <li>
+                                    <a href="#">restaurant</a>
+                                </li>
+                                <li>
+                                    <a href="#">life style</a>
+                                </li>
+                                <li>
+                                    <a href="#">design</a>
+                                </li>
+                                <li>
+                                    <a href="#">illustration</a>
+                                </li>
+                            </ul>
+                        </aside>
+
+
+                        <aside class="single_sidebar_widget instagram_feeds">
+                            <h4 class="widget_title">Instagram Feeds</h4>
+                            <ul class="instagram_row flex-wrap">
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/img/post/post_5.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/img/post/post_6.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/img/post/post_7.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/img/post/post_8.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/img/post/post_9.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid" src="assets/img/post/post_10.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </aside>
+
+
+                        <aside class="single_sidebar_widget newsletter_widget">
+                            <h4 class="widget_title">Newsletter</h4>
+
+                            <form action="#">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                                </div>
+                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit">Subscribe</button>
+                            </form>
+                        </aside>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- TODO:see all pagignation  -->
-        <!-- Recent Area End-->
+    </section>
+    <!--================Blog Area =================-->
 
-        
-
-    </main>
-    <!-- including footer -->
     <?php
         get_footer();
     ?>
-   

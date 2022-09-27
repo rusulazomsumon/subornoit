@@ -1,8 +1,18 @@
 <?php
+    // language transalation setup 
+    load_theme_textdomain('subornoit', get_template_directory().'/languages');
     // dynamic site/page title
     function subornoit_setup(){
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails',array('post','slider','service','teams','testimonial'));
+
+        // registering manu
+        register_nav_menus(array(
+            'primary-menu' => __('Primary Menu', 'subornoit'),
+            'footer-menu' => __('Footer Menu', 'subornoit'),
+            'top-menu' => __('Topber Menu', 'subornoit')
+
+        ));
 
     }
     // hocks for title

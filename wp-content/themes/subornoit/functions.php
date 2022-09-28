@@ -4,7 +4,7 @@
     // dynamic site/page title
     function subornoit_setup(){
         add_theme_support('title-tag');
-        add_theme_support('post-thumbnails',array('post','slider','service','teams','testimonial'));
+        add_theme_support('post-thumbnails',array('post','slider','service','teams','testimonial','cases'));
 
         // registering manu
         register_nav_menus(array(
@@ -227,6 +227,51 @@
             register_post_type( 'testimonial', $args );
     }
     add_action('init','subornoit_ttmls');
+
+    // *********************************************************************************************************
+    // dynamic  CACSES  using custom post 
+    function subornoit_cases(){
+        $labels = array(
+            'name'                  => _x( 'Cases', 'Post type general name', 'subornoit' ),
+            'subornoit'         => _x( 'Cases', 'Post type singular name', 'subornoit' ),
+            'menu_name'             => _x( 'Cases', 'Admin Menu text', 'subornoit' ),
+            'name_admin_bar'        => _x( 'Cases', 'Add New on Toolbar', 'subornoit' ),
+            'add_new'               => __( 'Add Cases', 'subornoit' ),
+            'add_new_item'          => __( 'Add New Cases', 'subornoit' ),
+            'new_item'              => __( 'New Cases', 'subornoit' ),
+            'edit_item'             => __( 'Edit Cases', 'subornoit' ),
+            'view_item'             => __( 'View Cases', 'subornoit' ),
+            'all_items'             => __( 'All Cases', 'subornoit' ),
+            'search_items'          => __( 'Search Cases', 'subornoit' ),
+            'parent_item_colon'     => __( 'Parent Cases:', 'subornoit' ),
+            'not_found'             => __( 'No Cases found.', 'subornoit' ),
+            'not_found_in_trash'    => __( 'No Cases found in Trash.', 'subornoit' ),
+            'featured_image'        => _x( 'Member Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+            );
+
+            $args = array(
+                'labels'             => $labels,
+                'public'             => true,   
+                'publicly_queryable' => true,
+                'show_ui'            => true,
+                'show_in_menu'       => true,
+                'query_var'          => true,
+                'rewrite'            => array( 'slug' => 'cases' ),
+                'capability_type'    => 'post',
+                'menu_position'       => 8,
+                'menu_icon'           => 'dashicons-analytics',
+                'has_archive'        => true,
+                'hierarchical'       => false,
+                'menu_position'      => null,
+                'supports'           => array('title', 'editor', 'thumbnail','excerpt'),
+                // to enable gutenburg editor this code need, without by defult clasic activate
+                'show_in_rest'       => true
+                
+            );
+        
+            register_post_type( 'cases', $args );
+    }
+    add_action('init','subornoit_cases');
 
 
     // end of funtion area

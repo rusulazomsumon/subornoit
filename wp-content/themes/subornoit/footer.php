@@ -6,7 +6,7 @@
                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
                       <div class="single-footer-caption mb-50">
                         <div class="single-footer-caption mb-30">
-                             <!-- logo -->
+                             <!-- company logo, activate from acf  -->
                             <div class="footer-logo">
                                 <a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/sbitlogo.png" alt="subornoit logo" width="130" height="auto"></a>
                             </div>

@@ -273,6 +273,36 @@
     }
     add_action('init','subornoit_cases');
 
+    // theme option with ACF 
+    if( function_exists('acf_add_options_page') ) {
+	
+        acf_add_options_page(array(
+            'page_title' 	=> __('Theme General Settings','subornoit'),
+            'menu_title'	=> __('Theme Settings','subornoit'),
+            'menu_slug' 	=> 'theme-general-settings',
+            'capability'	=> 'edit_posts',
+            'redirect'		=> false
+        ));
+        // for about page 
+        acf_add_options_sub_page(array(
+            'page_title' 	=> __('Theme About Settings','subornoit'),
+            'menu_title'	=> __('About','subornoit'),
+            'parent_slug'	=> 'theme-general-settings',
+        ));
+        // for header section
+        acf_add_options_sub_page(array(
+            'page_title' 	=> __('Theme Header Settings','subornoit'),
+            'menu_title'	=> __('Header','subornoit'),
+            'parent_slug'	=> 'theme-general-settings',
+        ));
+        // for footer section
+        acf_add_options_sub_page(array(
+            'page_title' 	=> __('Theme Footer Settings','subornoit'),
+            'menu_title'	=> __('Footer','subornoit'),
+            'parent_slug'	=> 'theme-general-settings',
+        ));
+        
+    }
 
     // end of funtion area
 ?>

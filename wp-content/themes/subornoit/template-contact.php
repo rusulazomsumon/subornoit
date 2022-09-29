@@ -73,33 +73,10 @@
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <button type="submit" class="button button-contactForm boxed-btn">Send</button>
-                            </div>
-                        </form>
+                        <div class="form-contact contact_form">
+                            <!-- activate in contac form7 -->
+                            <?php echo do_shortcode('[contact-form-7 id="129" title="contact form"]'); ?>
+                        </div>
                     </div>
                     <div class="col-lg-3 offset-lg-1">
                         <div class="media contact-info">
@@ -142,33 +119,10 @@
                 <div class="col-xl-7 col-lg-7 col-md-7">
                     <!-- Contact form Start -->
                     <div class="form-wrapper">
-                        <form id="contact-form" action="#" method="POST">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-box  mb-30">
-                                        <input type="text" name="name" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-box mb-30">
-                                        <input type="text" name="email" placeholder="Phone">
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 col-md-8 mb-30">
-                                    <div class="select-itms">
-                                        <select name="select" id="select1">
-                                            <option value="">Services</option>
-                                            <option value="">Services-1</option>
-                                            <option value="">Services-2</option>
-                                            <option value="">Services-3</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4">
-                                    <button type="submit" class="send-btn">Send</button>
-                                </div>
-                            </div>
-                        </form>
+                        <!-- form activated form contact form7 -->
+                        <div id="contact-form" >
+                            <?php echo do_shortcode('[contact-form-7 id="130" title="Callback Form"]'); ?>
+                        </div>
                     </div>
                 </div>     <!-- Contact form End -->
             </div>

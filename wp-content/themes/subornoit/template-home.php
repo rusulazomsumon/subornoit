@@ -91,10 +91,17 @@
             <div class="container">
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-8 mx-auto text-center">
+                        <!-- dynamic Request Callback Content -->
+                        <?php 
+                            $home_request_call_back = get_field('home_request_call_back', 'option');
+                            $request_cb_content = get_field('request_cb_content', 'option');
+                            $rcb_button_text = get_field('rcb_button_text', 'option');
+                            $rcb_button_url = get_field('rcb_button_url', 'option');
+                        ?>
                         <div class="request-content">
-                            <h3>Request for  Call Back</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore,</p>
-                            <a href="#" class="btn trusted-btn">Contact Us</a>
+                            <h3><?php echo $home_request_call_back; ?></h3>
+                            <p><?php echo $request_cb_content; ?></p>
+                            <a href="<?php echo $rcb_button_url; ?>" class="btn trusted-btn"><?php echo $rcb_button_text; ?></a>
                         </div>
                     </div>
                 </div>

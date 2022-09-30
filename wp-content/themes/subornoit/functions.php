@@ -283,10 +283,10 @@
             'capability'	=> 'edit_posts',
             'redirect'		=> false
         ));
-        // for about page 
+        // for  Home  page 
         acf_add_options_sub_page(array(
-            'page_title' 	=> __('Theme About Settings','subornoit'),
-            'menu_title'	=> __('About','subornoit'),
+            'page_title' 	=> __('Theme Home Areas Settings','subornoit'),
+            'menu_title'	=> __('Home Areas','subornoit'),
             'parent_slug'	=> 'theme-general-settings',
         ));
         // for header section

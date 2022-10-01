@@ -5,7 +5,7 @@
         <!-- slider Area Start-->
      <div class="slider-area ">
         <!-- Mobile Menu -->
-        <div class="single-slider slider-height2 d-flex align-items-center" style="background-image: url('assets/img/breadcumb.jpg');">
+        <div class="single-slider slider-height2 d-flex align-items-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/breadcumb.jpg');">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -25,116 +25,40 @@
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
+                        <?php 
+                            $args = array(
+                                'post_type' => 'post'
+                            );
+                            $query = new WP_Query($args);
+                            while($query->have_posts()){
+                                $query->the_post();
+                                ?>
+                                    <article class="blog_item">
+                                        <div class="blog_item_img">
+                                            <img class="card-img rounded-0" src="assets/img/blog/single_blog_1.png" 
+                                                alt=""><?php the_post_thumbnail('', array('class' => 'card-img rounded-0')); ?>
+                                            <a href="#" class="blog_item_date">
+                                                <h3><?php echo get_the_date('j'); ?></h3>
+                                                <p><?php echo get_the_date('M'); ?></p>
+                                            </a>
+                                        </div>
+                                        <div class="blog_details">
+                                            <a class="d-inline-block" href="<?php the_permalink() ?>">
+                                                <h2><?php the_title(); ?></h2>
+                                            </a>
+                                            <p><?php the_excerpt(); ?></p>
+                                            <ul class="blog-info-link">
+                                                <li><i class="fa fa-user"></i> <?php the_category(' '); ?></li>
+                                                <li><a href="#"><i class="fa fa-comments"></i> <?php echo get_comments_number(); ?> Comments</a></li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                <?php
+                            }
+                        ?>
+                        <!-- post area End -->
 
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="assets/img/blog/single_blog_2.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="assets/img/blog/single_blog_3.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="assets/img/blog/single_blog_4.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="assets/img/blog/single_blog_5.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
+                        <!-- ###############Pagignation Area############### -->
                         <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
                                 <li class="page-item">
@@ -157,9 +81,17 @@
                         </nav>
                     </div>
                 </div>
+                <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@SideBarArea@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
-                        <aside class="single_sidebar_widget search_widget">
+                        <!-- blog/pag sidebar linking from widged area -->
+                        <?php 
+                             // if user active sidebar then he/she will see content
+                             if(is_active_sidebar('sidebar')){
+                                 dynamic_sidebar('sidebar');
+                             }  
+                        ?>
+                        <!-- <aside class="single_sidebar_widget search_widget">
                             <form action="#">
                                 <div class="form-group">
                                     <div class="input-group mb-3">
@@ -221,7 +153,7 @@
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Recent Post</h3>
                             <div class="media post_item">
-                                <img src="assets/img/post/post_1.png" alt="post">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post/post_1.png" alt="post">
                                 <div class="media-body">
                                     <a href="single-blog.html">
                                         <h3>From life was you fish...</h3>
@@ -230,7 +162,7 @@
                                 </div>
                             </div>
                             <div class="media post_item">
-                                <img src="assets/img/post/post_2.png" alt="post">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post/post_2.png" alt="post">
                                 <div class="media-body">
                                     <a href="single-blog.html">
                                         <h3>The Amazing Hubble</h3>
@@ -239,7 +171,7 @@
                                 </div>
                             </div>
                             <div class="media post_item">
-                                <img src="assets/img/post/post_3.png" alt="post">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post/post_3.png" alt="post">
                                 <div class="media-body">
                                     <a href="single-blog.html">
                                         <h3>Astronomy Or Astrology</h3>
@@ -248,7 +180,7 @@
                                 </div>
                             </div>
                             <div class="media post_item">
-                                <img src="assets/img/post/post_4.png" alt="post">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post/post_4.png" alt="post">
                                 <div class="media-body">
                                     <a href="single-blog.html">
                                         <h3>Asteroids telescope</h3>
@@ -293,32 +225,32 @@
                             <ul class="instagram_row flex-wrap">
                                 <li>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/img/post/post_5.png" alt="">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/post/post_5.png" alt="">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/img/post/post_6.png" alt="">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/post/post_6.png" alt="">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/img/post/post_7.png" alt="">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/post/post_7.png" alt="">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/img/post/post_8.png" alt="">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/post/post_8.png" alt="">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/img/post/post_9.png" alt="">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/post/post_9.png" alt="">
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <img class="img-fluid" src="assets/img/post/post_10.png" alt="">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/post/post_10.png" alt="">
                                     </a>
                                 </li>
                             </ul>
@@ -336,7 +268,7 @@
                                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
                                     type="submit">Subscribe</button>
                             </form>
-                        </aside>
+                        </aside> -->
                     </div>
                 </div>
             </div>

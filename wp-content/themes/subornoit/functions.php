@@ -292,6 +292,12 @@
             'menu_title'	=> __('Home Areas','subornoit'),
             'parent_slug'	=> 'theme-general-settings',
         ));
+        // for  Home  page 
+        acf_add_options_sub_page(array(
+            'page_title' 	=> __('Theme  Contact  Page Settings','subornoit'),
+            'menu_title'	=> __('Contact Page','subornoit'),
+            'parent_slug'	=> 'theme-general-settings',
+        ));
         // for header section
         acf_add_options_sub_page(array(
             'page_title' 	=> __('Theme Header Settings','subornoit'),
@@ -306,6 +312,44 @@
         ));
         
     }
+
+    // register sideber 
+    // footer2
+    function subornoit_sidebar(){
+        // main sidebar
+        register_sidebar(array(
+            'name' 	        => __('Theme Main Sidebar','subornoit'),
+            'id'	        => 'sidebar',
+            'description'	=> __('Sidebar will show blog/post/category and others requred pages', 'subornoit'),
+            'before_widget'  => '<li id="%1$s" class="widget %2$s">',
+            'after_widget'   => "</li>\n",
+            'before_title'   => '<h4">',
+            'after_title'    => "</h4>\n",
+        ));
+        // footer 2 area 
+        register_sidebar(array(
+            'name' 	        => __('Theme Footer Widget 2','subornoit'),
+            'id'	        => 'footer-2',
+            'description'	=> __('Widgets in this area will be shown on footer.', 'subornoit'),
+            'before_widget'  => '<li id="%1$s" class="widget %2$s">',
+            'after_widget'   => "</li>\n",
+            'before_title'   => '<h4">',
+            'after_title'    => "</h4>\n",
+        ));
+        // footer 3
+        register_sidebar(array(
+            'name' 	        => __('Theme Footer Widget 3','subornoit'),
+            'id'	        => 'footer-3',
+            'description'	=> __('Widgets in this area will be shown on footer.', 'subornoit'),
+            'before_widget'  => '<li id="%1$s" class="widget %2$s">',
+            'after_widget'   => "</li>\n",
+            'before_title'   => '<h4">',
+            'after_title'    => "</h4>\n",
+        ));
+    }
+    add_action('widgets_init', 'subornoit_sidebar');
+
+
 
     // end of funtion area
 ?>

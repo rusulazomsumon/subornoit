@@ -41,40 +41,57 @@
                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
                        <div class="single-footer-caption mb-50">
                            <div class="footer-tittle">
-                               <h4>Company</h4>
-                               <ul>
-                                   <li><a href="index.html">Home</a></li>
-                                   <li><a href="about.html">About Us</a></li>
-                                   <li><a href="single-blog.html">Services</a></li>
-                                   <li><a href="#">Cases</a></li>
-                                   <li><a href="contact.html">  Contact Us</a></li>
-                               </ul>
+                               <?php 
+                                    // if user active footer then he/she will see content
+                                    if(is_active_sidebar('footer-2')){
+                                        dynamic_sidebar('footer-2');
+                                    }  
+                               ?>
                            </div>
                        </div>
                    </div>
                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
                        <div class="single-footer-caption mb-50">
                            <div class="footer-tittle">
-                               <h4>Services</h4>
-                               <ul>
-                                   <li><a href="#">Commercial Cleaning</a></li>
-                                   <li><a href="#">Office Cleaning</a></li>
-                                   <li><a href="#">Building Cleaning</a></li>
-                                   <li><a href="#">Floor Cleaning</a></li>
-                                   <li><a href="#">Apartment Cleaning</a></li>
-                               </ul>
+                                <?php 
+                                    // if user active footer then he/she will see content
+                                    if(is_active_sidebar('footer-3')){
+                                        dynamic_sidebar('footer-3');
+                                    }  
+                               ?>
                            </div>
                        </div>
                    </div>
+
+                   <!-- footer column 4 -->
                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
                        <div class="single-footer-caption mb-50">
                            <div class="footer-tittle">
-                               <h4>Get in Touch</h4>
-                               <ul>
-                                <li><a href="#">152-515-6565</a></li>
-                                <li><a href="#"> Demomail@gmail.com</a></li>
-                                <li><a href="#">New Orleans, USA</a></li>
-                            </ul>
+                            <!-- dinamic col4 title form ACM -->
+                                <?php 
+                                    $col4_title = get_field('col4_title', 'option');
+                                ?>
+                                <!-- Columb 4 title heading -->                
+                               <h4><?php echo $col4_title; ?></h4>
+                                <!-- list items -->
+                                <ul>
+                                    <!-- company logo, activate from acf  -->
+                                    <!-- dynamic top header content -->
+                                    <?php 
+                                        $col4_content = get_field('col4_content', 'option');
+                                        foreach($col4_content as $col4_cont){
+                                            ?>
+                                                <li>
+                                                    <!-- link from dynamic -->
+                                                    <a href="<?php echo $col4_cont['link_url']; ?>" target="_blank">
+                                                        <!-- Text for dynamic content -->
+                                                        <i><?php echo $col4_cont['link_text']; ?></i>
+                                                    </a>
+                                                </li>
+                                        <?php
+                                            }
+                                    ?>
+                                </ul>
                            </div>
                        </div>
                    </div>
@@ -88,9 +105,15 @@
                     <div class="row d-flex align-items-center">
                         <div class="col-xl-12 ">
                             <div class="footer-copy-right text-center">
-                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                                <p>
+                                    Copyright &copy;
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script> 
+                                    All rights reserved | Developed by 
+                                        <i class="ti-heart" aria-hidden="true"></i> by 
+                                        <a href="https://github.com/rusulazomsumon" target="_blank">Rusul Azom Sumon</a>
+                                </p>
                             </div>
                         </div>
                     </div>

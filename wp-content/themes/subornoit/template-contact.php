@@ -78,26 +78,35 @@
                             <?php echo do_shortcode('[contact-form-7 id="129" title="contact form"]'); ?>
                         </div>
                     </div>
+                    <!-- Address Area Dynamic: for ACF -->
+                    <?php 
+                        $address_line_1 = get_field('address_line_1', 'option');
+                        $address_line_2 = get_field('address_line_2', 'option');
+                        $phone = get_field('phone', 'option');
+                        $meet_hour = get_field('meet_hour', 'option');
+                        $mail = get_field('mail', 'option');
+                        $mail_text = get_field('mail_text', 'option');
+                    ?>
                     <div class="col-lg-3 offset-lg-1">
                         <div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-home"></i></span>
                             <div class="media-body">
-                                <h3>Buttonwood, California.</h3>
-                                <p>Rosemead, CA 91770</p>
+                                <h3><?php echo $address_line_1; ?></h3>
+                                <p><?php echo $address_line_2; ?></p>
                             </div>
                         </div>
                         <div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                             <div class="media-body">
-                                <h3>+1 253 565 2365</h3>
-                                <p>Mon to Fri 9am to 6pm</p>
+                                <h3><?php echo $phone; ?></h3>
+                                <p><?php echo $meet_hour; ?></p>
                             </div>
                         </div>
                         <div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-email"></i></span>
                             <div class="media-body">
-                                <h3>support@colorlib.com</h3>
-                                <p>Send us your query anytime!</p>
+                                <h3><?php echo $mail; ?></h3>
+                                <p><?php echo $mail_text; ?></p>
                             </div>
                         </div>
                     </div>

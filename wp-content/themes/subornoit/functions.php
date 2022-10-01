@@ -47,6 +47,7 @@
 
     }
     add_action( 'wp_enqueue_scripts', 'subornoit_assets' );
+
     
 // *********************************************************************************************************
     // dynamic slider using custom post 
@@ -272,6 +273,8 @@
             register_post_type( 'cases', $args );
     }
     add_action('init','subornoit_cases');
+
+    // *********************************************************************************************************
 
     // theme option with ACF 
     if( function_exists('acf_add_options_page') ) {

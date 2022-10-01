@@ -63,13 +63,14 @@
                                 </div>
                                 <div class="header-info-right">
                                     <ul class="header-social">
+                                        <!-- header socila linkin area, activate form ACM  -->
                                         <?php 
                                             $header_socials = get_field('header_socials', 'option');
                                             foreach($header_socials as $header_social){
                                         ?>
                                             <li>
                                                 <!-- link from dynamic -->
-                                                <a href="<?php echo $header_social['header_social_link']; ?>">
+                                                <a href="<?php echo $header_social['header_social_link']; ?>" target="_blank">
                                                     <!-- Icon from dynamic content -->
                                                     <i class="<?php echo $header_social['header_social_icon']['value']; ?>"></i>
                                                 </a>

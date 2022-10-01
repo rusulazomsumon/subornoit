@@ -6,21 +6,34 @@
                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
                       <div class="single-footer-caption mb-50">
                         <div class="single-footer-caption mb-30">
-                             <!-- company logo, activate from acf  -->
+                            <!-- company logo, activate from acf  -->
+                            <!-- dynamic top header content -->
+                            <?php 
+                                $footer_logo = get_field('footer_logo', 'option');
+                                $footer_description = get_field('footer_description', 'option');
+                            ?>
                             <div class="footer-logo">
-                                <a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/sbitlogo.png" alt="subornoit logo" width="130" height="auto"></a>
+                                <a href="<?php echo get_site_url(); ?>"><img src="<?php echo $footer_logo['url']; ?>" 
+                                    alt="<?php echo $footer_logo['title']; ?>" width="130" height="auto"></a>
                             </div>
                             <div class="footer-tittle">
                                 <div class="footer-pera">
-                                    <p>Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod</p>
+                                    <p><?php echo $footer_description ?></p>
                                </div>
                             </div>
-                            <!-- social -->
+                            <!-- social icon Dynamicfication , its followed by the header menu -->
                             <div class="footer-social">
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-twitter-square"></i></a>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-square"></i></a>
+                                <?php 
+                                    $header_socials = get_field('header_socials', 'option');
+                                    foreach($header_socials as $header_social){
+                                ?>
+                                <a href="<?php echo $header_social['header_social_link']; ?>" target="_blank">
+                                    <i class="<?php echo $header_social['header_social_icon']['value']; ?>"></i>
+                                </a>
+                                <!-- rest of loop -->
+                                <?php
+                                    }
+                                ?>
                             </div>
                         </div>
                       </div>

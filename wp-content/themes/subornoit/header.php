@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="assets/css/style.css"> -->
         <!-- for showing wp admint ber in the top -->
         <?php wp_head(); ?>
+        <!-- this global used in author info showing in blgo -->
+        <?php global $post; ?>
    </head>
 <!-- ************************************************************************************************************
     **********************************************Main Body ********************************************** -->

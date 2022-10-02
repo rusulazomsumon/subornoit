@@ -253,13 +253,13 @@
             <!-- #####################################SideBar###################################### -->
             <div class="col-lg-4">
                <div class="blog_right_sidebar">
-                  <!-- blog/pag sidebar linking from widged area -->
-                  <?php 
-                       // if user active sidebar then he/she will see content
-                       if(is_active_sidebar('sidebar')){
+                     <?php 
+                        // if user active sidebar then he/she will see content
+                        if(is_active_sidebar('sidebar')){
                            dynamic_sidebar('sidebar');
-                       }  
-                  ?>
+                        }  
+                     ?>
+                  <!-- blog/pag sidebar linking from widged area -->
                   <!-- <aside class="single_sidebar_widget search_widget">
                      <form action="#">
                         <div class="form-group">

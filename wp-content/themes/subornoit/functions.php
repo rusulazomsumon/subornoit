@@ -1,6 +1,7 @@
 <?php
     // language transalation setup 
     load_theme_textdomain('subornoit', get_template_directory().'/languages');
+
     // dynamic site/page title
     function subornoit_setup(){
         add_theme_support('title-tag');
@@ -13,6 +14,26 @@
             'top-menu' => __('Topber Menu', 'subornoit')
 
         ));
+
+        /*
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		$logo_width  = 150;
+		$logo_height = 50;
+
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'               => $logo_height,
+				'width'                => $logo_width,
+				'flex-width'           => true,
+				'flex-height'          => true,
+				'unlink-homepage-logo' => true,
+			)
+		);
+
 
     }
     // hocks for title

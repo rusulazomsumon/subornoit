@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
-                            <h2>Our Services</h2>
+                            <h2><?php echo esc_html__('Our Services', 'subornoit'); ?></h2>
                         </div>
                     </div>
                 </div>

@@ -91,8 +91,9 @@
                         <div class="row align-items-center">
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-1 col-md-1">
+                                <!-- dynamic logo -->
                                 <div class="logo">
-                                  <a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo/sbitlogo.png" alt="suborno IT logo" width="120px" height="auto"></a>
+                                  <a href="<?php site_url(); ?>"><?php the_custom_logo(); ?></a>
                                 </div>
                             </div>
                             <div class="col-xl-10 col-lg-10 col-md-10">

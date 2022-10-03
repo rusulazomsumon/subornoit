@@ -5,7 +5,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
-                            <h2>Our Recent News</h2>
+                            <!-- Title Transalate Activision and sec for security (hardcode hiding) -->
+                            <h2><?php echo esc_html__('Our Letest News', 'subornoit'); ?></h2>
                         </div>
                     </div>
                 </div>

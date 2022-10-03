@@ -148,7 +148,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-tittle text-center">
-                            <h2>Teams</h2>
+                            <!-- Title Transalate Activision -->
+                            <h2><?php echo esc_html__('Our Team', 'subornoit'); ?></h2>
                         </div>
                     </div>
                 </div>

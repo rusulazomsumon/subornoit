@@ -4827,6 +4827,10 @@ hr {
   margin-right: 10px;
 }
 
+.blog-pagination .pagination li a{
+  color: #999999;
+}
+
 .blog-pagination .page-link i,
 .blog-pagination .page-link span {
   font-size: 13px;

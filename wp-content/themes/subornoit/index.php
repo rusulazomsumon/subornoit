@@ -26,8 +26,11 @@
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
                         <?php 
+                        // paged use for pagination current page, and activatior
+                            $curren_page = get_query_var('paged');
                             $args = array(
-                                'post_type' => 'post'
+                                'post_type' => 'post',
+                                'paged'     => $curren_page
                             );
                             $query = new WP_Query($args);
                             while($query->have_posts()){
@@ -58,30 +61,8 @@
                         ?>
                         <!-- post area End -->
 
-                        <!-- ###############Pagignation Area############### -->
-<?php if ( have_posts() ) : ?>
-
-	<!-- Add the pagination functions here. -->
-
-	<!-- Start of the main loop. -->
-	<?php while ( have_posts() ) : the_post(); ?>
-
-	<!-- the rest of your theme's main loop -->
-
-	<?php endwhile; ?>
-	<!-- End of the main loop -->
-
-	<!-- Add the pagination functions here. -->
-
-<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
-
-<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
-
-<?php else : ?>
-
-<?php _e('Sorry, no posts matched your criteria.'); ?>
-
-<?php endif; ?>
+    <!-- ####33333333333333###########Pagignation Area#####333333333333333########## -->
+                        
                         <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
                                 <li class="page-item">
@@ -90,11 +71,9 @@
                                     </a>
                                 </li>
                                 <li class="page-item">
-                                    <a href="#" class="page-link">1</a>
+                                    <a href="#" class="page-link"><?php  echo paginate_links(); ?></a>
                                 </li>
-                                <li class="page-item active">
-                                    <a href="#" class="page-link">2</a>
-                                </li>
+                                
                                 <li class="page-item">
                                     <a href="#" class="page-link" aria-label="Next">
                                         <i class="ti-angle-right"></i>

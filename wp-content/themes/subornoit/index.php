@@ -59,6 +59,29 @@
                         <!-- post area End -->
 
                         <!-- ###############Pagignation Area############### -->
+<?php if ( have_posts() ) : ?>
+
+	<!-- Add the pagination functions here. -->
+
+	<!-- Start of the main loop. -->
+	<?php while ( have_posts() ) : the_post(); ?>
+
+	<!-- the rest of your theme's main loop -->
+
+	<?php endwhile; ?>
+	<!-- End of the main loop -->
+
+	<!-- Add the pagination functions here. -->
+
+<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+
+<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+
+<?php else : ?>
+
+<?php _e('Sorry, no posts matched your criteria.'); ?>
+
+<?php endif; ?>
                         <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
                                 <li class="page-item">

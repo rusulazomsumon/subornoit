@@ -122,8 +122,16 @@
        </div>
        <!-- Footer End-->
    </footer>
-   
+    <!-- Back To Top -->
         <!-- for showing wp admint ber in the top -->
         <?php wp_footer(); ?>
     </body>
+
+    <!-- back to top button -->
+    <div class="bk_top bg-dark">
+        <a class="back-to-top" href="#">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+
 </html>

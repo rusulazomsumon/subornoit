@@ -6834,3 +6834,40 @@ del {
   width: 100%;
   margin-bottom: 25px;
 }
+
+/* back to top */
+a.back-to-top {
+  background-color: #202222;
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    padding: 10px;
+    color: #DCE4E7;
+
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    font-size: x-large;
+
+    /* hide in general, Deactive Mode */
+    opacity: 50;
+    pointer-events: none;
+    transition: all .4s;
+}
+a.back-to-top.active{
+    bottom: 20px;
+    pointer-events: auto;
+    opacity: .75;
+    border-radius: 50%;
+}
+
+a.back-to-top.active:hover{
+  opacity: .95;
+  background-color: #233535;
+}

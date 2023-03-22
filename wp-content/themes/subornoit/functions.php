@@ -39,6 +39,14 @@
     // hocks for title
     add_action('after_setup_theme','subornoit_setup');
 
+    // custom login page redirect
+    function custom_login_url() {
+        return home_url('/my-login/');
+    }
+    add_filter('login_url', 'custom_login_url');
+
+
+
     // activing assects style and js
     function subornoit_assets() {
         // css files

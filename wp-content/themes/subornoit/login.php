@@ -6,7 +6,7 @@
 get_header(); ?>
 
 <div class="login-container">
-  <h1>Login to your account</h1>
+  <h1><?php bloginfo('name'); ?></h1>
 
   <?php wp_login_form(array('redirect' => home_url('/dashboard/'))); ?>
 

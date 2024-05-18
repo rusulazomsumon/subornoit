@@ -5,7 +5,7 @@
     // dynamic site/page title
     function subornoit_setup(){
         add_theme_support('title-tag');
-        add_theme_support('post-thumbnails',array('post','slider','service','teams','testimonial','cases'));
+        add_theme_support('post-thumbnails',array('post','slider','service','teams','testimonial','cases','madicine'));
 
         // registering manu
         register_nav_menus(array(
@@ -302,6 +302,51 @@
             register_post_type( 'cases', $args );
     }
     add_action('init','subornoit_cases');
+
+    // *********************************************************************************************************
+    // dynamic  madicine  using custom post 
+    function subornoit_madicine(){
+        $labels = array(
+            'name'                  => _x( 'Madicine', 'Post type general name', 'subornoit' ),
+            'subornoit'         => _x( 'Madicine', 'Post type singular name', 'subornoit' ),
+            'menu_name'             => _x( 'Madicine', 'Admin Menu text', 'subornoit' ),
+            'name_admin_bar'        => _x( 'Madicine', 'Add New on Toolbar', 'subornoit' ),
+            'add_new'               => __( 'Add Madicine', 'subornoit' ),
+            'add_new_item'          => __( 'Add New Madicine', 'subornoit' ),
+            'new_item'              => __( 'New Madicine', 'subornoit' ),
+            'edit_item'             => __( 'Edit Madicine', 'subornoit' ),
+            'view_item'             => __( 'View Madicine', 'subornoit' ),
+            'all_items'             => __( 'All Madicine', 'subornoit' ),
+            'search_items'          => __( 'Search Madicine', 'subornoit' ),
+            'parent_item_colon'     => __( 'Parent Madicine:', 'subornoit' ),
+            'not_found'             => __( 'No Madicine found.', 'subornoit' ),
+            'not_found_in_trash'    => __( 'No Madicine  found in Trash.', 'subornoit' ),
+            'featured_image'        => _x( 'Madiciner Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+            );
+
+            $args = array(
+                'labels'             => $labels,
+                'public'             => true,   
+                'publicly_queryable' => true,
+                'show_ui'            => true,
+                'show_in_menu'       => true,
+                'query_var'          => true,
+                'rewrite'            => array( 'slug' => 'madicine' ),
+                'capability_type'    => 'post',
+                'menu_position'       => 11,
+                'menu_icon'           => 'dashicons-plus-alt',
+                'has_archive'        => true,
+                'hierarchical'       => false,
+                'menu_position'      => null,
+                'supports'           => array('title', 'editor', 'thumbnail','excerpt'),
+                // to enable gutenburg editor this code need, without by defult clasic activate
+                'show_in_rest'       => true
+                
+            );
+        
+            register_post_type( 'madicine', $args );
+    }
+    add_action('init','subornoit_madicine');
 
     // *********************************************************************************************************
 

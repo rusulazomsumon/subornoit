@@ -36,6 +36,7 @@
                      </ul>
                      <!-- blog content -->
                      <?php the_content(); ?>
+
                   </div>
                </div>
                <div class="navigation-top">
